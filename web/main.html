@@ -67,6 +67,10 @@
                     }
                 }
             }
+            
+            $(".clickable_action_item").clicked(function(event) {
+                alert(event.target.id);
+            });
 
             function get_display_name_div(action){
                 return `<div class="display_name">${action['display_name']}</div>`;
@@ -76,27 +80,29 @@
                 return `<div class="image"><img src="images/${action['image']}"></div>`;
             }
 
-            // function get_clickable_action_div()
+            function get_clickable_action_div(inside_div, type){
+                return `<div id="${action_name}" class="action_item ${type} clickable_action_item">${inside_div}</div>`;
+            }
 
             function add_with_name_and_image(action_name, action){
                 console.log("Adding element");
                 display_name_div = get_display_name_div(action);
                 image_div = get_image_div(action);
-                total_div = `<div id="${action_name}" class="action_item image_and_name">${display_name_div}${image_div}</div>`;
+                total_div = get_clickable_action_div(display_name_div + image_div, 'image_and_name')
                 action_wrapper.append(total_div);
             }
 
             function add_with_image(action_name, action){
                 console.log("Adding element");
                 image_div = get_image_div(action);
-                total_div = `<div id="${action_name}" class="action_item image">${image_div}</div>`;
+                total_div = get_clickable_action_div(image_div, 'image')
                 action_wrapper.append(total_div);
             }
 
             function add_with_display_name(action_name, action){
                 console.log("Adding element");
                 display_name_div = get_display_name_div(action);
-                total_div = `<div id="${action_name}" class="action_item name">${display_name_div}</div>`;
+                total_div = get_clickable_action_div(display_name_div, 'name')
                 action_wrapper.append(total_div);
             }
         });
