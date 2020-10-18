@@ -1,0 +1,140 @@
+{
+  "name": "labeller",
+  "entrypoint": "main_selection",
+  "actions": {
+    "main_selection": {
+      "display_name": "Select category",
+      "type": "OptionList",
+      "options": [
+        "washer",
+        "simple_text",
+        "bolt",
+        "nut",
+        "3d_print",
+        "connector"
+      ]
+    },
+    "washer": {
+      "display_name": "Washer",
+      "image": "washer.png",
+      "type": "Sequence",
+      "sequence": [
+        "washer_inner_diameter",
+        "washer_outer_diameter"
+      ]
+    },
+    "washer_inner_diameter": {
+      "display_name": "Inner diameter",
+      "type": "ThreadSize"
+    },
+    "washer_outer_diameter": {
+      "display_name": "Outer diameter",
+      "type": "Integer"
+    },
+    "simple_text": {
+      "display_name": "Label text",
+      "type": "Text"
+    },
+    "bolt": {
+      "display_name": "Bolt",
+      "type": "Sequence",
+      "sequence": [
+        "bolt_length",
+        "bolt_thread_size",
+        "bolt_head_type"
+      ]
+    },
+    "bolt_length": {
+      "display_name": "Bolt Length",
+      "type": "Integer"
+    },
+    "bolt_thread_size": {
+      "display_name": "Bolt thread",
+      "type": "ThreadType"
+    },
+    "bolt_head_type": {
+      "display_name": "Bolt head type",
+      "type": "BoltHead"
+    },
+    "nut": {
+      "display_name": "Nut",
+      "type": "Sequence",
+      "sequence": [
+        "nut_thread_type"
+      ]
+    },
+    "nut_thread": {
+      "display_name": "Nut thread type",
+      "type": "ThreadType"
+    },
+    "connector": {
+      "display_name": "Connector",
+      "type": "Sequence",
+      "sequence": [
+        "simple_text"
+      ]
+    }
+  },
+  "types": {
+    "ThreadType": {
+      "options": [
+        {
+          "name": "2",
+          "display_name": "M2"
+        },
+        {
+          "name": "3",
+          "display_name": "M3"
+        },
+        {
+          "name": "4",
+          "display_name": "M4"
+        },
+        {
+          "name": "5",
+          "display_name": "M5"
+        },
+        {
+          "name": "6",
+          "display_name": "M6"
+        },
+        {
+          "name": "8",
+          "display_name": "M8"
+        },
+        {
+          "name": "10",
+          "display_name": "M10"
+        },
+        {
+          "name": "12",
+          "display_name": "M12"
+        },
+        {
+          "name": "14",
+          "display_name": "M14"
+        },
+        {
+          "name": "20",
+          "display_name": "M20"
+        }
+      ]
+    },
+    "BoltHead": {
+      "options": [
+        {
+          "name": "hex",
+          "image": "hex.png"
+        },
+        {
+          "name": "flat",
+          "image": "flathead.png"
+        },
+        {
+          "name": "torx",
+          "image": "torx.png"
+        }
+      ]
+    }
+  }
+}
