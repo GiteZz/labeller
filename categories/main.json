@@ -16,7 +16,7 @@
     },
     "washer": {
       "display_name": "Washer",
-      "image": "washer.png",
+      "image": "washer.jpg",
       "type": "Sequence",
       "sequence": [
         "washer_inner_diameter",
